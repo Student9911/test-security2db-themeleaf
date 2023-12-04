@@ -43,7 +43,7 @@ public class SecurityController {
     @PostMapping("/register/save")
     public String registration(@Valid @ModelAttribute("User") UserDto userDto,
                                BindingResult result,
-                               Model model){
+                               Model model) {
         User existingUser = userService.findUserByEmail(userDto.getEmail());
 
         if (existingUser != null && existingUser.getEmail() != null && !existingUser.getEmail().isEmpty()) {

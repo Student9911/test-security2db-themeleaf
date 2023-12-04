@@ -22,15 +22,15 @@ public class StudentController {
 
     @GetMapping("/list")
     public ModelAndView getAllStudents() {
-        log.info(("/list -> connrction"));
-        ModelAndView  mav = new ModelAndView("list-students");
+        log.info(("/list -> connection"));
+        ModelAndView mav = new ModelAndView("list-students");
         mav.addObject("students", studentRepository.findAll());
         return mav;
     }
 
     @GetMapping("/addStudentForm")
     public ModelAndView addStudentForm() {
-        ModelAndView  mav = new ModelAndView("add-student-form");
+        ModelAndView mav = new ModelAndView("add-student-form");
         Student student = new Student();
         mav.addObject("student", student);
         return mav;
